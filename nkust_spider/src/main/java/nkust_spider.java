@@ -53,7 +53,9 @@ public class nkust_spider {
 //            Elements a = doc.select("tbody:nth-child(3) > tr:nth-child(1) > td.champion-overview__data > ul > li:nth-child(1) > img");
 //            Element b = a.get(0);
 //            System.out.println(b.attr("title"));
+
         }
     }
 }
+
 
