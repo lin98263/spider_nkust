@@ -40,6 +40,16 @@ public class nkust_spider {
             System.out.println("技能加點:" + skills);
             System.out.println("---------");
 
+            Elements c = doc.select("tbody.tabItem.ChampionKeystoneRune-1 div.perk-page  div.perk-page__item.perk-page__item--active  div.perk-page__image >img");
+            System.out.println("推薦符文:");
+            for(int x = 0; x <= 5; x++) {
+                Element d = c.get(x);
+                System.out.println(d.attr("alt"));
+                if (x != 5){
+                    System.out.println("⇓");
+                }
+            }
+
 
         } catch (Exception e) {
             System.out.println("你是不是打錯字了?還是腦袋有問題?");
