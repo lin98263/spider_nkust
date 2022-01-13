@@ -45,13 +45,14 @@ public class nkust_spider {
             for(int x = 0; x <= 5; x++) {
                 Element d = c.get(x);
                 System.out.println(d.attr("alt"));
-                if (x != 5){
+                if (x == 5){
+                }
+                else{
                     System.out.println("⇓");
                 }
-
             }
         } catch (Exception e) {
-            System.out.println("你是不是打錯字了?還是腦袋有問題??");
+            System.out.println("你是不是打錯字了?還是腦袋有問題?");
         }
     }
 }
