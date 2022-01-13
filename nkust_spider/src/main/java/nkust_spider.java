@@ -4,7 +4,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.Scanner;
-public class nkust_spider {
+public class spider {
 
     public static void main(String[] args) {
 
@@ -45,9 +45,7 @@ public class nkust_spider {
             for(int x = 0; x <= 5; x++) {
                 Element d = c.get(x);
                 System.out.println(d.attr("alt"));
-                if (x == 5){
-                }
-                else{
+                if (x != 5){
                     System.out.println("⇓");
                 }
             }
@@ -56,4 +54,3 @@ public class nkust_spider {
         }
     }
 }
-
