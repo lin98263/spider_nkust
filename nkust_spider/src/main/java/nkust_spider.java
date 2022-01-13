@@ -4,8 +4,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.Scanner;
-
 public class nkust_spider {
+
     public static void main(String[] args) {
 
         String champion, lane;
@@ -18,7 +18,7 @@ public class nkust_spider {
 
         try {
             Document doc = Jsoup.connect("https://www.op.gg/champion/" + champion + "/statistics/" + lane + "/build").get();
-            String name = doc.getElementsByClass("champion-stats-header-info__name").get(0).text();
+            String name  = doc.getElementsByClass("champion-stats-header-info__name").get(0).text();
             System.out.println(name);
             System.out.println("---------");
 
@@ -40,22 +40,20 @@ public class nkust_spider {
             System.out.println("技能加點:" + skills);
             System.out.println("---------");
 
-//            champion-stats-trend-rate
-
-//            Element spells = doc.select("tbody:nth-child(3) > tr:nth-child(1) > td.champion-overview__data > ul > li:nth-child(1) > img").get(0);
-//            System.out.println(spells);
-//            System.out.println(spells.attr("title"));
-
-//            Elements spells = doc.select("champion-stats__list__item");
-//            System.out.println(spells);
-
-
-//            Elements a = doc.select("tbody:nth-child(3) > tr:nth-child(1) > td.champion-overview__data > ul > li:nth-child(1) > img");
-//            Element b = a.get(0);
-//            System.out.println(b.attr("title"));
-
+            Elements c = doc.select("tbody.tabItem.ChampionKeystoneRune-1 div.perk-page  div.perk-page__item.perk-page__item--active  div.perk-page__image >img");
+            System.out.println("推薦符文:");
+            for(int x = 0; x <= 5; x++) {
+                Element d = c.get(x);
+                System.out.println(d.attr("alt"));
+                if (x == 5){
+                }
+                else{
+                    System.out.println("⇓");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("你是不是打錯字了?還是腦袋有問題?");
         }
     }
 }
-
 
